@@ -78,6 +78,14 @@ A chat room in three columns:
 
 On phones the sidebar collapses to a chip row above the chat and the right panel hides.
 
+## Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/roshankamat/dungeonAI&env=ANTHROPIC_API_KEY&envDescription=Claude%20API%20key%20from%20console.anthropic.com&project-name=dungeon-ai&repository-name=dungeonAI)
+
+One click: Vercel clones the repo, asks for `ANTHROPIC_API_KEY`, builds, and gives you a URL. After that every push to `main` deploys automatically. No database or extra services are needed.
+
+Manual alternative: in the Vercel dashboard choose **Add New → Project**, import `roshankamat/dungeonAI`, add the `ANTHROPIC_API_KEY` environment variable, and deploy.
+
 ## Quick start
 
 ```bash

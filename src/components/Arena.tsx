@@ -107,14 +107,14 @@ export function Arena() {
   }, [viewing, state, report, channel, introAt]);
 
   return (
-    <main className="relative flex min-h-dvh flex-col">
+    <main className="relative flex h-dvh flex-col overflow-hidden">
       <SceneBackground reflection={false} intensity={0.5} />
       <SummonOverlay show={showSummon && busy} />
-      <TopNav cta={false} />
+      <TopNav cta={false} className="shrink-0" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-[minmax(0,1fr)] gap-5 px-4 pb-6 sm:px-6 lg:grid-cols-[250px_minmax(0,1fr)] xl:grid-cols-[250px_minmax(0,1fr)_290px]">
+      <div className="relative z-10 mx-auto grid min-h-0 w-full max-w-[1600px] flex-1 grid-cols-[minmax(0,1fr)] gap-5 px-4 pb-5 sm:px-6 lg:grid-cols-[250px_minmax(0,1fr)] xl:grid-cols-[250px_minmax(0,1fr)_290px]">
         <Sidebar
-          className="hidden lg:flex"
+          className="hidden min-h-0 overflow-y-auto lg:flex"
           channel={channel}
           onChannel={setChannel}
           agents={state.agents}
@@ -124,7 +124,7 @@ export function Arena() {
         />
 
         <ChatPanel
-          className="h-[calc(100dvh-110px)] min-h-[560px]"
+          className="min-h-0"
           channel={channel}
           onChannel={setChannel}
           messages={messages}
@@ -139,7 +139,7 @@ export function Arena() {
           onRetry={retry}
         />
 
-        <MissionPanel className="hidden xl:flex" agents={state.agents} phase={state.phase} persisted={state.persisted} />
+        <MissionPanel className="hidden min-h-0 overflow-y-auto xl:flex" agents={state.agents} phase={state.phase} persisted={state.persisted} />
       </div>
     </main>
   );
